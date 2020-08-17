@@ -21,9 +21,9 @@ class Form extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault()
-    let formData = { firstName: this.state.firstName, lastName: this.state.lastName }
-    let dataArray = this.state.submittedData.concat(formData)
-    this.setState({submittedData: dataArray})
+    const firstName = event.target.children[0].value
+    const lastName = event.target.children[1].value
+    this.sendFormDataSomewhere({ firstName, lastName })
   }
 
   listOfSubmissions = () => {
